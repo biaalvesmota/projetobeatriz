@@ -56,3 +56,14 @@ ul{
     border-radius: 24px;
     margin: 48px auto;
 }
+
+footer{
+    color: #F0E8C2;
+    text-align: center;
+    padding-bottom: 48px;
+}
+
+footer img{
+    vertical-align: middle;
+   
+}
