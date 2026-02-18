@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Rocketseat - Convite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Crie seu Evento</h1>
+            <p>Preencha os dados e gere um convite incrível.</p>
+        </header>
+
+        <form id="form-evento">
+            <div class="input-group">
+                <label for="titulo">Título do Evento *</label>
+                <input type="text" id="titulo" name="titulo" required>
+                <span class="error-message">Este campo é obrigatório</span>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="data-inicio">Início *</label>
+                    <input type="datetime-local" id="data-inicio" required>
+                </div>
+                <div class="input-group">
+                    <label for="data-fim">Fim *</label>
+                    <input type="datetime-local" id="data-fim" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Tipo do Evento *</label>
+                <div class="type-selection">
+                    <input type="radio" name="tipo" id="presencial" value="presencial" checked>
+                    <label for="presencial">Presencial</label>
+                    
+                    <input type="radio" name="tipo" id="online" value="online">
+                    <label for="online">Online</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="local">Local ou Link *</label>
+                <input type="text" id="local" required>
+            </div>
+
+            <div class="input-group">
+                <label for="descricao">Descrição (opcional)</label>
+                <textarea id="descricao" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Cor Principal</label>
+                <div class="color-palette">
+                    <label class="color-dot" style="--bg-color: #8257e5;">
+                        <input type="radio" name="cor" value="#8257e5" checked>
+                        <span></span>
+                    </label>
+                    <label class="color-dot" style="--bg-color: #ff4757;">
+                        <input type="radio" name="cor" value="#ff4757">
+                        <span></span>
+                    </label>
+                    <label class="color-dot" style="--bg-color: #2ed573;">
+                        <input type="radio" name="cor" value="#2ed573">
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Estilo do Convite</label>
+                <div class="toggle-theme">
+                    <input type="checkbox" id="theme-switch">
+                    <label for="theme-switch">
+                        <span class="light-label">Claro</span>
+                        <span class="dark-label">Escuro</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Imagem de Capa</label>
+                <label for="capa" class="file-button">Selecionar imagem</label>
+                <input type="file" id="capa" accept="image/*">
+                <small id="file-name">Nenhum arquivo selecionado</small>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="email">E-mail de contato *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="telefone">Telefone *</label>
+                    <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Gerar Convite</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
