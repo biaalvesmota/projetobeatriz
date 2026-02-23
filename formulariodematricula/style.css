@@ -1,0 +1,141 @@
+:root {
+    --primary: #FF5C22;
+    --bg-side: #FEECE7;
+    --text-dark: #242424;
+    --text-gray: #666666;
+    --border: #E2E8F0;
+    --error: #ED3A3A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+.main-wrapper { display: flex; min-height: 100vh; }
+
+/* Esquerda */
+.form-section { 
+    flex: 1.2; 
+    padding: 40px 8%; 
+}
+.back-link { 
+    text-decoration: none; 
+    color: var(--text-gray); 
+    font-size: 14px; 
+    margin-bottom: 20px; 
+    display: block; 
+}
+h1 { 
+    font-size: 24px; 
+    margin-bottom: 8px; 
+}
+header p { 
+    color: var(--text-gray); 
+    font-size: 14px; 
+    margin-bottom: 40px; 
+    line-height: 1.5; 
+}
+
+fieldset { 
+    border: none; 
+    margin-bottom: 40px; 
+}
+legend { 
+    font-weight: 600;
+    font-size: 18px; 
+    width: 100%; 
+    border-bottom: 1px solid var(--border); 
+    padding-bottom: 10px; 
+    margin-bottom: 20px; 
+}
+
+.input-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    margin-bottom: 20px; 
+}
+.input-wrapper label { 
+    font-size: 14px; 
+    font-weight: 500; 
+    margin-bottom: 8px; 
+}
+.input-wrapper small { font-size: 12px; color: var(--text-gray); margin-top: 4px; }
+
+input, select, textarea { padding: 12px; border: 1px solid var(--border); border-radius: 8px; outline: none; font-size: 14px; }
+input:focus { border-color: var(--primary); }
+
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Dropzone */
+.dropzone { border: 1px dashed var(--primary); background: #FFF5F2; padding: 25px; text-align: center; border-radius: 8px; cursor: pointer; color: var(--primary); font-size: 14px; }
+
+/* Erro */
+.error input { border-color: var(--error); }
+.error-msg { color: var(--error); font-size: 12px; margin-top: 5px; }
+
+/* Cards de Turno e Esporte */
+.sub-label { font-size: 14px; font-weight: 500; margin: 20px 0 10px; }
+.radio-group-cards { display: flex; gap: 15px; }
+.card-option { flex: 1; border: 1px solid var(--border); border-radius: 12px; padding: 15px; cursor: pointer; position: relative; }
+.card-option input { position: absolute; opacity: 0; }
+.card-content { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.card-option.active { border-color: var(--primary); background: #FFF5F2; color: var(--primary); }
+
+.sports-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.sport-item { border: 1px solid var(--border); padding: 12px; border-radius: 10px; text-align: center; font-size: 14px; cursor: pointer; }
+.sport-item input { display: none; }
+.sport-item.active { border-color: var(--primary); background: #FFF5F2; }
+
+/* Termos */
+.terms-wrapper { display: flex; gap: 10px; font-size: 13px; margin-bottom: 40px; align-items: flex-start; }
+.terms-wrapper span { color: var(--primary); font-weight: 600; cursor: pointer; }
+
+/* Botões */
+.actions { display: flex; gap: 15px; }
+.btn-save { flex: 1; background: transparent; border: 1px solid var(--primary); color: var(--primary); padding: 15px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.btn-submit { flex: 1; background: var(--primary); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+/* Direita Fixa */
+.side-panel { flex: 0.8; background: var(--bg-side); position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.logo-top { font-weight: 700; color: var(--primary); margin-bottom: 20px; }
+.side-image-container img { width: 100%; max-width: 400px; margin-bottom: 30px; }
+.side-content h2 { font-size: 32px; line-height: 1.2; font-weight: 700; }
+.side-content h2 span { color: var(--primary); }
+.side-content p { color: var(--text-gray); margin-top: 20px; }
+
+@media (max-width: 1024px) {
+    .main-wrapper { flex-direction: column; }
+    .side-panel { position: static; height: auto; order: -1; }
+    .sports-grid { grid-template-columns: 1fr 1fr; }
+}
+/* ... Mantenha o CSS anterior e adicione/ajuste estes pontos: */
+
+.icon-placeholder, .icon-small, .sport-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    /* Aqui é onde o ícone que você colar vai aparecer */
+}
+
+/* Efeito Visual ao selecionar Cards */
+.card-option, .sport-item {
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.card-option.active, .sport-item.active {
+    border-color: var(--primary-color) !important;
+    background-color: #FFF5F2 !important;
+}
+
+.sport-item input { display: none; } /* Esconde o checkbox real */
+
+/* Estilo para quando o e-mail estiver errado */
+.input-wrapper.error input {
+    border-color: var(--error-color);
+}
+.error-msg {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 5px;
+}
