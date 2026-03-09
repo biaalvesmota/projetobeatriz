@@ -1,0 +1,4 @@
+.container{
+    --max-widght: 375px;
+    width: min(var(--max-widght), 100% - var(--px-lg))* 2;
+}
